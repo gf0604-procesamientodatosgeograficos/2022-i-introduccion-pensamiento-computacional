@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introducción al pensamiento computacional</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Manuel Vargas" />
+    <meta name="date" content="2021-03-31" />
+    <script src="libs/header-attrs-2.7/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: title-slide, right, top
+background-image: url(img/turing-machine.png)
+background-size: contain
+
+.right-column[
+# Introducción al pensamiento computacional
+
+Manuel Vargas&lt;br&gt;
+Universidad de Costa Rica
+]
+
+.palegrey[.left[.footnote[&lt;small&gt;Representación artística de una [máquina de Turing](https://es.wikipedia.org/wiki/M%C3%A1quina_de_Turing). Fuente: [Porao](https://commons.wikimedia.org/wiki/File:Turing_Machine.png).&lt;/small&gt;]]]
+
+---
+
+# Contenidos
+
+- ### ¿Qué es pensamiento computacional?
+
+- ### Conceptos fundamentales del pensamiento computacional:
+  - #### Descomposición.
+  - #### Reconocimiento de patrones.
+  - #### Abstracción.
+  - #### Algoritmos.
+  
+- ### Introducción al lenguaje Scratch.
+
+---
+
+# Resolución de problemas mediante computadoras
+
+--
+### Las computadoras pueden ayudar a resolver problemas en muchas áreas.
+
+--
+&lt;img src="img/resolucion-problemas-computadoras.png" height="150" /&gt;
+
+--
+### Los métodos para encontrar las soluciones a estos problemas deben expresarse de forma tal que puedan ser implementados en computadoras.
+
+---
+
+# ¿Qué es pensamiento computacional?
+
+--
+- ### Es un enfoque para la resolución de problemas basado en conceptos y métodos de las ciencias de la computación.
+
+--
+- ### Puede ser aplicado en muchas áreas, no solo en computación.
+
+--
+- ### Además de la programación, el pensamiento computacional incluye otras etapas como análisis, diseño y pruebas.
+
+--
+- ### Se considera una de las destrezas fundamentales del siglo XXI.
+
+---
+
+# Investigación en pensamiento computacional
+
+--
+.pull-left[
+**Seymour Papert**  
+&lt;small&gt;
+Matemático, pionero de la inteligencia artificial, co-creador del lenguaje de programación Logo.
+&lt;/small&gt;
+&lt;p&gt;
+&lt;figure&gt;
+  &lt;img src="img/papert.jpg" height="150" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;Fuente: [ak_mardini](https://commons.wikimedia.org/wiki/File:Papert.jpg).&lt;/small&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;
+&lt;small&gt;
+- *Mindstorms: Children, Computers, and Powerful Ideas* (1983)  
+- [*An Exploration in the Space of Mathematics Educations* (1996)](http://www.papert.org/articles/AnExplorationintheSpaceofMathematicsEducations.html)
+&lt;/small&gt;
+]
+
+--
+.pull-right[
+**Jeannette Wing**  
+&lt;small&gt;
+Investigadora en ciencias de la computación, ex vicepresidente de Microsoft Research.
+&lt;/small&gt;
+&lt;p&gt;
+&lt;figure&gt;
+  &lt;img src="img/wing.jpg" height="150" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;Fuente: [World Economic Forum](https://commons.wikimedia.org/wiki/File:Jeannette_Wing,_Davos_2013.jpg).&lt;/small&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;
+&lt;small&gt;
+- [*Computational thinking* (2006)](https://www.cs.cmu.edu/~15110-s13/Wing06-ct.pdf)
+&lt;/small&gt;
+]
+
+---
+
+# ¿Qué implica resolver problemas mediante pensamiento computacional?
+
+--
+## Se identifican cuatro conceptos fundamentales:
+
+--
+- ### **Descomposición**: división de un problema en subproblemas más pequeños.
+
+--
+- ### **Reconocimiento de patrones**: búsqueda de similitudes en los problemas.
+
+--
+- ### **Abstracción**: identificación de la información que se necesita y filtrado de la que no se necesita para resolver un problema.
+
+--
+- ### **Algoritmos**: descripción, paso por paso, de la solución a un problema.
+
+---
+
+# Descomposición
+
+--
+- ### División de un problema complejo en subproblemas más fáciles de resolver.
+
+--
+- ### La unión de las soluciones a los subproblemas brinda la solución al problema original.
+
+---
+
+# Descomposición - ejemplo
+## Escritura de un documento
+
+--
+.pull-left[
+### Documento sin secciones
+&lt;figure&gt;
+  &lt;img src="img/descomposicion-informe-completo.png" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;Fuente: &lt;a href="https://www.coursera.org/learn/computational-thinking-problem-solving"&gt;Universidad de Pennsylvania&lt;/a&gt;.&lt;/small&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+]
+
+--
+.pull-right[
+### Documento con secciones
+&lt;figure&gt;
+  &lt;img src="img/descomposicion-informe-secciones.png" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;Fuente: &lt;a href="https://www.coursera.org/learn/computational-thinking-problem-solving"&gt;Universidad de Pennsylvania&lt;/a&gt;.&lt;/small&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+]
+
+---
+
+# Descomposición - ejemplo
+## Mapas de teselas (*tile maps*)
+
+--
+Se componen de múltiples rectángulos (teselas o *tiles*) de diferentes tamaños que se agregan y desagregan conforme se requiere en acercamientos, alejamientos y otras operaciones.
+
+--
+&lt;br&gt;&lt;br&gt;
+&lt;figure&gt;
+  &lt;img src="img/mapa-mosaico.png" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;Fuente: &lt;a href="https://commons.wikimedia.org/wiki/File:Tiled_web_map_Stevage.png"&gt;Stevage&lt;/a&gt;.&lt;/small&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+---
+
+# Reconocimiento de patrones
+
+--
+- ### Se buscan similitudes o características compartidas entre problemas o componentes de un mismo problema.
+
+--
+- ### Facilita la resolución de un problema al aplicarse una respuesta ya desarrollada.
+
+---
+
+# Reconocimiento de patrones - ejemplo
+## Patrones arquitectónicos
+
+--
+.pull-left[
+- Son posibles soluciones para problemas de diseño arquitectónico. Christopher Alexander et al. recopilaron más de 200 en su libro [*A Pattern Language: Towns, Buildings, Construction* (1977)](https://laptrinhx.com/a-pattern-language-3372046788/).
+
+- "*Cada patrón describe un problema que ocurre infinidad de veces en nuestro entorno, así como la solución al mismo, de tal modo que podemos utilizar esta solución un millón de veces más adelante sin tener que volver a pensarla otra vez.*" (Christopher Alexander)
+]
+
+--
+.pull-right[
+&lt;figure&gt;
+  &lt;img src="img/patrones-arquitectura.png" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;Fuente: &lt;a href="https://laptrinhx.com/a-pattern-language-3372046788/"&gt;A Pattern Language&lt;/a&gt;.&lt;/small&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+]
+
+---
+
+# Reconocimiento de patrones - ejemplo
+## Patrones de diseño de software
+
+--
+.pull-left[
+- Inspirados en las ideas de Alexander, varios ingenieros de software desarrollaron patrones para resolver problemas comunes de desarrollo de software.
+
+- Los patrones de diseño de software alcanzaron gran popularidad con la publicación del libro [*Design Patterns: Elements of Reusable Object-Oriented Software* (1994)](https://en.wikipedia.org/wiki/Design_Patterns), escrito por Erich Gamma, Richard Helm, Ralph Johnson y John Vlissides; y en el cual se documentan [23 patrones de diseño de software](https://en.wikipedia.org/wiki/Design_Patterns#Patterns_by_type).
+]
+
+--
+.pull-right[
+&lt;figure&gt;
+  &lt;img src="img/model-view-controller.png" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;Diagrama de interacciones en el patrón de diseño de software denominado &lt;a href="https://es.wikipedia.org/wiki/Modelo%E2%80%93vista%E2%80%93controlador"&gt;Modelo-Vista-Controlador o &lt;em&gt;Model-View-Controller&lt;/em&gt; (MVC)&lt;/a&gt;. Fuente: &lt;a href="https://commons.wikimedia.org/wiki/File:MVC-Process.svg"&gt;RegisFrey&lt;/a&gt;.&lt;/small&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+]
+
+---
+
+# Abstracción
+
+--
+- ### Identificación de cuáles aspectos de un problema son importantes y de cuáles no lo son.
+
+--
+- ### Ayuda a construir un modelo de la solución.
+
+--
+- ### Se aplica en modelado de datos.
+
+---
+
+# Abstracción - ejemplo
+## Selección de atributos de un conjunto de datos
+
+--
+.pull-left[
+### Atributos generales de una persona
+- Nombre
+- Edad
+- Ingreso mensual
+- Historial académico
+- Pasatiempos
+- Color favorito
+- Estatura
+- Peso
+- Historial médico
+- ...
+]
+
+--
+.pull-right[
+#### Atributos a considerar para la BD de una universidad
+- Nombre
+- Edad
+- Historial académico
+- ...
+
+#### Atributos a considerar para la BD de una red social
+- Nombre
+- Edad
+- Pasatiempos
+- ...
+]
+
+---
+
+# Abstracción - ejemplo
+## Capas temáticas de un SIG
+Las capas temáticas son una abstracción de un espacio geográfico
+
+--
+&lt;figure&gt;
+  &lt;img src="img/sig-capas.png" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;Fuente: &lt;a href="http://www.admitnetwork.org/work-packages/gis-gps/"&gt;Admit&lt;/a&gt;.&lt;/small&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+---
+
+# Algoritmos
+
+--
+- ### Indicaciones detalladas de como resolver, paso por paso, un problema.
+
+--
+- ### Especifican el orden en el que deben ejecutarse los pasos, así como las condiciones que deben cumplirse antes de cada paso.
+
+---
+
+# Algoritmos - ejemplo
+## Receta de cocina
+
+--
+&lt;figure&gt;
+  &lt;img src="img/arroz-con-pollo.png" height="400" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;Fuente: &lt;a href="https://cookpad.com/cr/recetas/6014919-arroz-con-pollo-al-estilo-costarricense"&gt;Cookpad&lt;/a&gt;.&lt;/small&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+---
+
+# Algoritmos - ejemplo
+## Obtener el valor máximo de una lista
+
+--
+#### lista = [29.6, -36.81, 31.85, 25.71, 90.2, 0.4]
+
+--
+Solo es posible comparar dos elementos de la lista a la vez, para determinar si uno es mayor que otro.
+
+--
+#### Algoritmo
+
+--
+1. Se lee la lista (del teclado, de un archivo o de alguna otra fuente).
+
+--
+2. Si la lista está vacía, se despliega la hilera de texto "Lista vacía" y se concluye el proceso. Si no, se continúa con el paso 3.
+
+--
+3. Se designa el primer elemento de la lista como "máximo actual".
+
+--
+4. Se recorre la lista y se compara cada uno de los elementos con el máximo actual.
+
+--
+5. Si un elemento comparado es mayor que el máximo actual, entonces pasa a ser el nuevo máximo actual.
+
+--
+4. El valor máximo de la lista es el máximo actual, cuando termina de recorrerse la lista.
+
+---
+
+# Algoritmos - ejemplo
+## Obtener el valor máximo de una lista (continuación)
+
+--
+### Ejecución del algoritmo
+
+--
+&lt;span style="color:green";&gt;elemento en verde = máximo actual&lt;/span&gt;  
+&lt;span style="color:red";&gt;elemento en rojo  = elemento que está siendo comparado&lt;/span&gt;
+&lt;p&gt;
+
+--
+[&lt;span style="color:green;"&gt;29.6&lt;/span&gt;, &lt;span style="color:red;"&gt;-36.81&lt;/span&gt;, 31.85, 25.71, 90.2, 0.4]  
+&lt;p&gt;
+
+--
+[&lt;span style="color:green;"&gt;29.6&lt;/span&gt;, -36.81, &lt;span style="color:red;"&gt;31.85&lt;/span&gt;, 25.71, 90.2, 0.4]  
+&lt;p&gt;
+
+--
+[29.6, -36.81, &lt;span style="color:green;"&gt;31.85&lt;/span&gt;, &lt;span style="color:red;"&gt;25.71&lt;/span&gt;, 90.2, 0.4]  
+&lt;p&gt;
+
+--
+[29.6, -36.81, &lt;span style="color:green;"&gt;31.85&lt;/span&gt;, 25.71, &lt;span style="color:red;"&gt;90.2&lt;/span&gt;, 0.4]  
+&lt;p&gt;
+
+--
+[29.6, -36.81, 31.85, 25.71, &lt;span style="color:green;"&gt;90.2&lt;/span&gt;, &lt;span style="color:red;"&gt;0.4&lt;/span&gt;]  
+&lt;p&gt;
+
+--
+[29.6, -36.81, 31.85, 25.71, &lt;span style="color:green;"&gt;90.2&lt;/span&gt;, 0.4]  
+&lt;p&gt;
+
+--
+### Valor máximo = &lt;span style="color:green;"&gt;90.2&lt;/span&gt;
+
+---
+
+# Algoritmos - diagramas de flujo
+
+--
+.pull-left[
+- ### Los [diagramas de flujo](https://es.wikipedia.org/wiki/Diagrama_de_flujo) son representaciones diagramáticas de un algoritmo.
+- ### Representan los pasos del algoritmo mediante [símbolos](https://es.wikipedia.org/wiki/Diagrama_de_flujo#Simbolog%C3%ADa_y_significado) y su orden de ejecución mediante flechas.
+- ### Por convención, se leen de arriba hacia abajo o de izquierda a derecha.
+]
+
+--
+.pull-right[
+#### Ejemplo: obtener el máximo de una lista
+&lt;figure&gt;
+  &lt;img src="img/diagrama-flujo-valor-maximo.png" /&gt;
+&lt;/figure&gt;
+]
+
+---
+
+# Algoritmos - pseudocódigo
+
+--
+.pull-left[
+- ### El [pseudocódigo](https://es.wikipedia.org/wiki/Pseudoc%C3%B3digo) es una descripción textual y en lenguaje natural de un algoritmo.
+- ### Su estructura se asemeja a la de un lenguaje de programación, pero está diseñado para que ser comprendido por personas, no para ser ejecutado por computadoras.
+]
+
+--
+.pull-right[
+#### Ejemplo: obtener el máximo de una lista
+```r
+LISTA &lt;- Leer()
+si (Vacia(LISTA)) {
+  Desplegar("Lista vacía")
+} si no {
+  MAX &lt;- LISTA[1]
+  I &lt;- 1
+  mientras (I &lt;= Longitud(LISTA)) {
+    ITEM &lt;- LISTA[I]
+    si (ITEM &gt; MAX) {
+      MAX &lt;- ITEM
+    }
+    I &lt;- I + 1
+  }
+  Desplegar(MAX)
+}
+```
+]
+
+---
+
+# Algoritmos - implementación en [R](https://www.r-project.org/)
+
+```r
+# Obtener el valor máximo de una lista
+
+lista &lt;- c(29.6, -36.81, 31.85, 25.71, 90.2, 0.4)
+cat("Lista de entrada: ", lista, "\n")
+
+if (length(lista) == 0) {
+  cat("La lista está vacía", "\n")
+} else {
+  max &lt;- lista[1]
+  i &lt;- 1
+  while (i &lt;= length(lista)) {
+    if (lista[i] &gt; max) {
+      max &lt;- lista[i]
+    }
+    i &lt;- i + 1
+  }
+  
+  cat("Valor máximo de la lista: ", max, "\n")
+}
+```
+&lt;small&gt;
+  [Archivo con código fuente en R](https://github.com/gf0604-procesamientodatosgeograficos/2021i-leccion-01-introduccion-pensamiento-computacional/blob/master/valor-maximo-lista/valor-maximo-lista.R)
+&lt;/small&gt;
+
+---
+
+# Algoritmos - implementación en [Python](https://www.python.org/)
+
+```python
+# Obtener el valor máximo de una lista
+
+lista = [29.6, -36.81, 31.85, 25.71, 90.2, 0.4]
+print("Lista de entrada: ", lista)
+
+if (len(lista) == 0):
+    print("La lista está vacía")
+else:
+    max = lista[0]
+    i = 0
+    while (i &lt; len(lista)):
+        if (lista[i] &gt; max):
+            max = lista[i]
+        i = i + 1
+        
+    print("Valor máximo de la lista:", max)  
+```
+&lt;small&gt;
+  [Archivo con código fuente en Python](https://github.com/gf0604-procesamientodatosgeograficos/2021i-leccion-01-introduccion-pensamiento-computacional/blob/master/valor-maximo-lista/valor-maximo-lista.py)
+&lt;/small&gt;
+
+---
+
+# Algoritmos
+## Entrada -&gt; Procesamiento -&gt; Salida
+
+--
+Este patrón describe el flujo de procesamiento básico de cualquier algoritmo o programa.
+
+&lt;br&gt;&lt;br&gt;
+&lt;figure&gt;
+  &lt;img src="img/entrada-procesamiento-salida.png" /&gt;
+&lt;/figure&gt;
+
+---
+
+# El lenguaje de programación Scratch
+
+.pull-left[
+- [Scratch](https://scratch.mit.edu/) es un lenguaje de programación orientado a educación. Su nombre proviene de la palabra [*scratching*](https://en.wikipedia.org/wiki/Scratching).
+
+- [*"Scratch ayuda a las personas jóvenes a pensar creativamente, razonar sistemáticamente y trabajar colaborativamente..."*](https://scratch.mit.edu/about).
+
+- Fue desarrollado en 2003 (una versión de escritorio) por el [MIT Media Lab](https://www.media.mit.edu/) y es administrado por la Fundación Scratch, una organización sin fines de lucro que lo facilita de manera gratuita.
+
+- Scratch es software libre distribuido mediante licencia [GPLv2](https://es.wikipedia.org/wiki/GNU_General_Public_License).
+]
+
+.pull-right[
+&lt;figure&gt;
+  &lt;img src="img/Scratchlogo.svg.png" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;Fuente: &lt;a href="https://commons.wikimedia.org/wiki/File:Scratchlogo.svg"&gt;Scratch Team&lt;/a&gt;.&lt;/small&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+]
+
+---
+
+# Práctica de programación con Scratch
+## Considere este paisaje:
+
+&lt;img src="img/paisaje-urbano.png" height="400" /&gt;
+
+---
+
+# Práctica de programación con Scratch
+
+- Ingrese al sitio web de [Scratch](https://scratch.mit.edu/) y estudie la intefaz del ambiente de desarrollo. Puede buscar información adicional en otros sitios (Google, YouTube, etc.). Revise ejemplos y proyectos de otras personas para saber qué puede hacer con Scratch.
+
+- Utilizando los cuatro principios fundamentales del pensamiento computacional, desarrolle un algoritmo para dibujar el paisaje de la diapositiva anterior. Considere las siguientes preguntas orientadoras:
+
+  - ¿Cómo puede dividirse el problema?
+  - ¿Qué patrones observa (formas, tamaños, etc.)?
+  - ¿Qué información se necesita para hacer los dibujos (ej. medidas)?
+  - ¿Qué nivel de detalle requiere el algoritmo?
+  
+- Implemente en Scratch el algoritmo que desarrolló.
+
+---
+
+# Práctica de programación con Scratch
+## Aplicación de pensamiento computacional
+
+### Descomposición
+**Subproblemas**
+- Dibujar casa
+  - Dibujar base
+  - Dibujar techo
+  
+- Dibujar edificio
+  - Dibujar base
+  - Dibujar base
+  - Dibujar techo
+  
+---
+
+# Práctica de programación con Scratch
+## Aplicación de pensamiento computacional
+
+### Reconocimiento de patrones
+**Patrones identificados**
+- Dibujar base --&gt; dibujar cuadradado
+- Dibujar techo --&gt; dibujar triángulo
+
+---
+
+# Práctica de programación con Scratch
+## Aplicación de pensamiento computacional
+
+### Abstracción
+
+**Atributos necesarios para dibujar las figuras**
+- Coordenada x
+- Coordenada y
+- Longitud del lado (de cuadrados y triángulos)
+
+---
+
+# Práctica de programación con Scratch
+## Aplicación de pensamiento computacional
+
+### Algoritmo en pseudocódigo
+Nota: las posiciones (x, y) que se pasan como parámetros corresponden a la esquina inferior izquierda de las figuras.
+
+```
+dibujar_paisaje
+  borrar_todo
+  dibujar_casa (-160, 10, 50)
+  dibujar_casa (-85, -140, 60)
+  dibujar_casa (145, -60, 75)
+  dibujar_edificio (10, -40, 75)  
+```  
+
+---
+
+```
+dibujar_casa (x, y, lado)
+  dibujar_base (x, y, lado)
+  dibujar_techo (x, y + lado, lado)
+
+dibujar_edificio (x, y, lado)
+  dibujar_base (x, y, lado)
+  dibujar_base (x, y + lado, lado)
+  dibujar_techo (x, y + lado*2, lado)
+  
+dibujar_base (x, y, lado)
+  subir_lapiz
+  ir_a (x, y)
+  apuntar_en_direccion (90)
+  bajar_lapiz
+  repetir 4 veces
+    esperar_segundos (0.5)
+    mover (lado)
+    girar_derecha (90)
+    
+dibujar_techo (x, y, lado)
+  subir_lapiz
+  ir_a (x, y)
+  bajar_lapiz
+  apuntar_en_direccion (90)
+  repetir 3 veces
+    esperar_segundos (0.5)
+    mover (lado)
+    girar_izquierda (120)
+    
+```
+
+---
+
+# Práctica de programación con Scratch
+## Aplicación de pensamiento computacional
+
+### Resultado de la implementación del algoritmo en Scratch
+
+&lt;img src="img/paisaje-scratch.png" height="300" /&gt;
+
+[Código fuente](https://github.com/gf0604-procesamientodatosgeograficos/2021i-leccion-01-introduccion-pensamiento-computacional/raw/master/paisaje/paisaje.sb3)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
