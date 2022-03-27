@@ -2,7 +2,7 @@
 title: "Introducción al pensamiento computacional"
 author: "Manuel Vargas"
 institute: "Universidad de Costa Rica"
-date: "2021-03-31"
+date: "2022-03-26"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -42,6 +42,18 @@ background-size: contain
 - ### Introducción al lenguaje Scratch.
 
 ---
+# Computadora
+
+--
+### *"__Máquina electrónica__ que, mediante determinados __programas__, permite almacenar y tratar información, y resolver __problemas de diversa índole__."* ([Diccionario de la lengua española](https://dle.rae.es/computador#A4hIGQC)).
+
+--
+### *"__Máquina electrónica digital programable__ que ejecuta una serie de comandos para __procesar__ los datos de __entrada__, obteniendo convenientemente información que posteriormente se envía a las unidades de __salida__."* ([Wikipedia](https://es.wikipedia.org/wiki/Computadora)).
+
+--
+### *"A computer is a __machine or device__ that performs processes, calculations and operations based on instructions provided by a software or hardware __program__. It has the ability to accept data (__input__), __process__ it, and then produce __outputs__."* ([Techopedia](https://www.techopedia.com/definition/4607/computer)).
+
+---
 
 # Resolución de problemas mediante computadoras
 
@@ -53,6 +65,72 @@ background-size: contain
 
 --
 ### Los métodos para encontrar las soluciones a estos problemas deben expresarse de forma tal que puedan ser implementados en computadoras.
+
+---
+
+# Algunos tipos de problemas que pueden resolverse con la ayuda de computadoras y otras máquinas
+
+--
+### Numéricos
+
+.pull-left[
+<figure>
+  <img src="img/stepped-reckoner.jpg" />
+</figure>
+]
+.pull-right[
+  <figcaption>
+    <small>Réplica de <a href="https://es.wikipedia.org/wiki/Stepped_Reckoner">stepped reckoner</a>: máquina de cálculo inventada por Gottfried Leibniz alrededor de 1670. Fue la primera calculadora capaz de realizar las cuatro operaciones aritméticas básicas. Fuente: <a href="https://commons.wikimedia.org/wiki/File:Leibnitzrechenmaschine.jpg">Kolossos</a>. <p><p><em>"Es deplorable que las personas más excelentes desperdicien su tiempo haciendo cálculos, cuando cualquiera puede realizarlos acertadamente con la ayuda de una máquina."</em> (Gottfried Leibniz).</small>
+  </figcaption> 
+]
+---
+# Algunos tipos de problemas que pueden resolverse con la ayuda de computadoras y otras máquinas
+
+--
+### Criptográficos
+
+.pull-left[
+<figure>
+  <img src="img/bombe.jpg" />
+</figure>
+]
+.pull-right[
+  <figcaption>
+    <small>Recreación de <a href="https://es.wikipedia.org/wiki/Bombe">Bombe</a>: dispositivo electromecánico de uso específico utilizado por los criptólogos británicos para ayudar a descifrar las señales cifradas por la máquina alemana <a href="https://es.wikipedia.org/wiki/Enigma_(m%C3%A1quina)">Enigma</a> durante la Segunda Guerra Mundial. Fuente: <a href="https://es.wikipedia.org/wiki/Bombe#/media/Archivo:TuringBombeBletchleyPark.jpg">Sarah Hartwell</a>.</small>
+  </figcaption> 
+]
+---
+# Otras aplicaciones de las computadoras
+
+### - Científicas
+### - Financieras
+### - Empresariales
+### - Recreativas
+### - De comunicación
+### - De transporte
+### - ...
+---
+# Problemas geoespaciales
+
+--
+<figure>
+  <img src="img/johnsnow-map.jpg" height="400" />
+</figure>
+
+--
+<figcaption>
+  <small><a href="https://www.theguardian.com/news/datablog/2013/mar/15/john-snow-cholera-map">Mapa de John Snow</a> que muestra los casos de cólera durante la <a href="https://es.wikipedia.org/wiki/Epidemia_de_c%C3%B3lera_de_Broad_Street">epidemia de Broad Street</a>, Londres, en 1854.  Puede apreciarse la cercanía de muchos casos a la bomba de agua contaminada en la intersección de Broad Street y Cambridge Street. Fuente: <a href="https://en.wikipedia.org/wiki/File:Snow-cholera-map-1.jpg">John Snow</a>.</small>
+</figcaption> 
+
+---
+# Otros ejemplos de problemas geoespaciales
+
+- ### ¿Cuáles son las zonas prioritarias para la conservación de una especie?
+- ### ¿Cuál es la mejor ubicación para un local comercial?
+- ### ¿Cuáles son las áreas más vulnerables a desastres naturales?
+- ### ¿Cuáles son los lugares en los que una epidemia tiene más probabilidades de impactar?
+- ### ¿Cuál es la ruta más corta entre dos sitios?
+- ### ...
 
 ---
 
@@ -562,6 +640,7 @@ Este patrón describe el flujo de procesamiento básico de cualquier algoritmo o
 - Implemente en Scratch el algoritmo que desarrolló.
 
 ---
+exclude: true
 
 # Práctica de programación con Scratch
 ## Aplicación de pensamiento computacional
@@ -578,6 +657,7 @@ Este patrón describe el flujo de procesamiento básico de cualquier algoritmo o
   - Dibujar techo
   
 ---
+exclude: true
 
 # Práctica de programación con Scratch
 ## Aplicación de pensamiento computacional
@@ -588,6 +668,7 @@ Este patrón describe el flujo de procesamiento básico de cualquier algoritmo o
 - Dibujar techo --> dibujar triángulo
 
 ---
+exclude: true
 
 # Práctica de programación con Scratch
 ## Aplicación de pensamiento computacional
@@ -600,6 +681,7 @@ Este patrón describe el flujo de procesamiento básico de cualquier algoritmo o
 - Longitud del lado (de cuadrados y triángulos)
 
 ---
+exclude: true
 
 # Práctica de programación con Scratch
 ## Aplicación de pensamiento computacional
@@ -617,6 +699,7 @@ dibujar_paisaje
 ```  
 
 ---
+exclude: true
 
 ```
 dibujar_casa (x, y, lado)
@@ -651,6 +734,7 @@ dibujar_techo (x, y, lado)
 ```
 
 ---
+exclude: true
 
 # Práctica de programación con Scratch
 ## Aplicación de pensamiento computacional
